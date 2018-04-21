@@ -18,6 +18,7 @@ echo -e "\n\nProduction application deployment initiated @ $LOG_DATE\n\n" | tee 
 if [ -a $HOME/deploy/deploy.lock ]; then
   echo -e "\nLock file exists. Halting deploy\n" | tee -a $LOG_NAME
   mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
+  rm -rf $HOME/deploy/deploy.lock
   exit 1
 else
   echo -e "\nLock file does not exist. Moving forward with deploy\n" | tee -a $LOG_NAME
@@ -30,15 +31,17 @@ fi
 git up | tee -a $LOG_NAME
 if [ $? -ne 0 ]; then
   mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
+  rm -rf $HOME/deploy/deploy.lock
   exit 1
 else
   cp -r $HOME/website $HOME/deploy/backup/website_$LOG_DATE
   cp $HOME/.ht* $HOME/config
-  tar cvfz $HOME/deploy/backup/secrets.tar.gz $HOME/config
-  gpg --passphrase $password_htaccess_tar -c --no-use-agent secrets.tar.gz
+  tar cvfz $HOME/deploy/backup/secrets.$LOG_DATE.tar.gz $HOME/config
+  gpg --passphrase $password_htaccess_tar -c --no-use-agent $HOME/deploy/backup/secrets.$LOG_DATE.tar.gz
   if [ $? -ne 0 ]; then
     mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
     rm -rf $HOME/deploy/backup/secrets.tar.gz
+    rm -rf $HOME/deploy/deploy.lock
     exit 1
   fi
   rm -rf $HOME/deploy/backup/secrets.tar.gz
@@ -48,6 +51,7 @@ else
   rsync -ithv $WORKDIR/ $HOME/ | tee -a $LOG_NAME
   if [ $? -ne 0 ]; then
      mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
+     rm -rf $HOME/deploy/deploy.lock
      exit 1
   else
   rm -rf $HOME/deploy/deploy.lock
@@ -58,16 +62,17 @@ rm -rf $HOME/deploy/deploy.excluded_files
 #
 # Post deploy smoke test
 #
-echo -e "\nDeploy complete. Running smoke test via curl\n" | tee -a $LOG_NAME 
-curl http://www.michaelbilberry.com > $HOME/deploy/log/deploy_smoke_test.html
-SUCCESS=`cat $HOME/deploy/log/deploy_smoke_test.html | grep SUCCESS | wc -l`
-if [ "$SUCCESS" -gt 0 ]; then
-  echo -e "\nSmoke test complete. All systems nominal\n" | tee -a $LOG_NAME
-  exit 0
-else
-  echo -e "\nIt's the end of the world as we know it!\n" | tee -a $LOG_NAME
-  mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
-  exit 1
-fi
+#echo -e "\nDeploy complete. Running smoke test via curl\n" | tee -a $LOG_NAME 
+#curl http://www.michaelbilberry.com > $HOME/deploy/log/deploy_smoke_test.html
+#SUCCESS=`cat $HOME/deploy/log/deploy_smoke_test.html | grep SUCCESS | wc -l`
+#if [ "$SUCCESS" -gt 0 ]; then
+#  echo -e "\nSmoke test complete. All systems nominal\n" | tee -a $LOG_NAME
+#  exit 0
+#else
+#  echo -e "\nIt's the end of the world as we know it!\n" | tee -a $LOG_NAME
+#  mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
+  rm -rf $HOME/deploy/deploy.lock
+#  exit 1
+#fi
 
 exit

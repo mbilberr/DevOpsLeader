@@ -1,0 +1,164 @@
+/*
+Author:Michael Bilberry
+Date:January, 2018
+
+Purpose: Provide a convienent method to prove basic competencies and provide code review without having to transfer a Resume/portfolio. 
+Contact: admin@michaelbilberry.com
+*/
+
+.title {
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-size: 75px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        line-height: 100%;
+} 
+
+header {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        clear: both;
+        text-align: center;
+}
+
+.deets {
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        text-align: center;
+        margin-top:0em;
+        letter-spacing: 2.0px;
+        font-size: 0.8vw;
+        float:top;
+}
+
+h1 {
+        margin-top: 0.2em;
+}
+
+h2 {
+        margin-top: 1.5em;
+        margin-bottom: 0.1em;
+}
+
+h3 {
+        margin-top:1.5em;
+        margin-bottom:0.1em;
+}
+
+nav {
+ 
+        float: left;
+        min-width: 200px;
+        max-width: 300px;
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+}
+
+nav ul {
+        list-style-type: none;
+        padding: 0;
+}
+
+nav ul a {
+        text-decoration: none;
+}
+
+.container {
+        width: 100%;
+        border: 1px solid gray;
+}
+
+article {
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-size: 25px;
+        border-left: 1px solid gray;
+        padding: 1em;
+        overflow: hidden;
+}
+
+hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 2px;
+}
+
+.cardtitle {
+        color: grey;
+        font-size: 18px;
+}
+
+.card {
+        min-width: 100%;
+        text-align: center;
+        border: 1px solid gray;
+}
+
+.cardicons img {
+        padding-top: 50px;
+        height: 256px;
+        width: 256px;
+        border:0;
+}
+
+button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 24px;
+}
+
+.contactme {
+        text-align:left;
+        font-size:50;
+        margin:10%;
+}
+
+.projects {
+        text-align:left;
+        font-size:20px;
+        margin:5%;
+}
+
+a {
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        text-decoration: none;
+        font-size: inherit;
+        color: black;
+}
+
+cardbutton:hover, ahover:hover {
+        opacity: 0.7;
+}
+
+.bottompic {
+        float: bottom;
+        z-index: 0;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        width:100%;
+}
+
+footer {
+        position:absolute;
+        padding: 1em;
+        margin-top:2500;
+        margin-bottom:0;
+        left:0;
+        right:0;
+        background-color: black;
+        clear:both;
+        color: white;
+        text-align: center;
+}
+

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: In order to reduce bloat I need to change logging to use a simple pass/fail variable for each step then just send a summary email at the end if there was a failure
+
 #
 # Prepare environment
 #
@@ -31,6 +33,15 @@ if [ $? -ne 0 ]; then
   exit 1
 else
   cp -r $HOME/website $HOME/deploy/backup/website_$LOG_DATE
+  cp $HOME/.ht* $HOME/config
+  tar cvfz $HOME/deploy/backup/secrets.tar.gz $HOME/config
+  gpg --passphrase $password_htaccess_tar -c --no-use-agent secrets.tar.gz
+  if [ $? -ne 0 ]; then
+    mail -s "Deploy Failed for michaelbilberry.com" admin@michaelbilberry.com < $LOG_NAME
+    rm -rf $HOME/deploy/backup/secrets.tar.gz
+    exit 1
+  fi
+  rm -rf $HOME/deploy/backup/secrets.tar.gz
   find $HOME/deploy/backup/ -type f -mtime +90 -exec rm {} \;
   find $HOME/deploy/backup/ -type f -mtime +2 -exec gzip {} \;
   echo -e "$WORKDIR/.git/\n$WORKDIR/deploy.sh\n$WORKDIR/README.md" > $HOME/deploy/deploy.excluded_files
@@ -60,4 +71,3 @@ else
 fi
 
 exit
-

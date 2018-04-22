@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>#playlist,audio{
+  background:#666;
+  width:400px;
+  padding:20px;
+}
+.active a{
+    color:#5DB0E6;
+    text-decoration:none;
+}
+li a{
+   color:#eeeedd;
+   background:#333;
+   padding:5px;
+   display:block;
+}
+li a:hover{
+   text-decoration:none;
+}
+
+
+</style>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script src="scripts/music_player.js"></script>
+
+</head>
+
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = "Thanks for taking the time out of your busy day to check this out. If you don't mind please give me a little feedback. I'll even make sure you get to listen to some interesting music.";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+
+
+    <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+        <source type="audio/mp3" src="music/JazzBeforeHipstersRuinedIt.mp3">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+    <ul id="playlist">
+        <li class="active">Jazz Before Hipsters Ruined It</li>
+        <li>Old sea shanty</li>
+        <li>Outlaw Country</li>
+    </ul>
+
+
+
+
+
+
+</body>
+</html>
+

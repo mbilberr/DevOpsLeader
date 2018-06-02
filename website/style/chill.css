@@ -1,0 +1,77 @@
+html body {background-color: black;}
+/*html { height: 100%; font-size: 62.5% }*/
+
+.formdiv * { margin: 0;
+            padding: 0; }
+
+.formdiv {
+  background-color: white;
+  font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+  margin: 2%;}
+
+fieldset {
+  border: 1px solid #095D92;
+  padding: 12px 17px;
+  background-color: #DFF3FF;
+  margin 100px;
+  padding 100px;}
+
+legend {
+  font-size: 1.1em;
+  background-color: #095D92;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 100px 100px;
+  margin-top 100px;}
+
+label.float {
+  float: left;
+  display: block;
+  margin: 4px 0 0 0;
+  clear: left; }
+
+label {
+  display: block;
+  width: auto;
+  margin: 0 0 10px 0; }
+
+label.spam-protection {
+  display: inline;
+  width: auto;
+  margin: 0; }
+
+input.inp-text, textarea, input.choose, input.answer {
+  border: 1px solid #909090;
+  padding: 3px; }
+
+input.inp-text {
+  width: 500px;
+  margin: 0 0 8px 8px; }
+
+textarea {
+  width: 60%;
+  height: 10%;
+  display: block;}
+
+input.choose {
+  margin: 0 2px 0 0; }
+
+input.answer {
+  width: 40px;
+  margin: 0 0 0 10px; }
+
+input.submit-button {
+  font: 1.4em Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+  display: block;
+  margin: 23px 0 0 0; }
+
+/* TRY AGAIN NOW THAT IF STATEMENT IS FIXED
+<!--[if IE]>
+fieldset { padding: 22px 17px 12px 17px; position: relative; margin: 12px 0 34px 0; }
+legend { position: relative; top: -12px; left: 10px; }
+label.float { margin: 5px 0 0 0; }
+label { margin: 0 0 5px 0; }
+label.spam-protection { display: inline; width: auto; position: relative; top: -3px; }
+input.choose { border: 0; margin: 0; }
+input.submit-button { margin: -10px 0 0 0; }-->*/

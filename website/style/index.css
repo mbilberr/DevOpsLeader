@@ -162,30 +162,3 @@ footer {
         text-align: center;
 }
 
-
-
-/* Form */
-.formdiv * { margin: 0; padding: 0; }
-.formdiv { height: 40%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helvetica, sans-serif; margin: 40px;}
-html { height: 100%; font-size: 62.5% }
-form { margin: 25px 0 0 29px; width: 450px; padding-bottom: 30px; }
-fieldset { margin: 15 0 22px 0; border: 1px solid #095D92; padding: 12px 17px; background-color: #DFF3FF; }
-legend { font-size: 1.1em; background-color: #095D92; color: #FFFFFF; font-weight: bold; padding: 4px 8px; }
-label.float { float: left; display: block; width: 100px; margin: 4px 0 0 0; clear: left; }
-label { display: block; width: auto; margin: 0 0 10px 0; }
-label.spam-protection { display: inline; width: auto; margin: 0; }
-input.inp-text, textarea, input.choose, input.answer { border: 1px solid #909090; padding: 3px; }
-input.inp-text { width: 300px; margin: 0 0 8px 0; }
-textarea { width: 400px; height: 150px; margin: 0 0 12px 0; display: block; }
-input.choose { margin: 0 2px 0 0; }
-input.answer { width: 40px; margin: 0 0 0 10px; }
-input.submit-button { font: 1.4em Georgia, "Times New Roman", Times, serif; letter-spacing: 1px; display: block; margin: 23px 0 0 0; }
-form br { display: none; }
-<!--[if IE]>
-fieldset { padding: 22px 17px 12px 17px; position: relative; margin: 12px 0 34px 0; }
-legend { position: relative; top: -12px; left: 10px; }
-label.float { margin: 5px 0 0 0; }
-label { margin: 0 0 5px 0; }
-label.spam-protection { display: inline; width: auto; position: relative; top: -3px; }
-input.choose { border: 0; margin: 0; }
-input.submit-button { margin: -10px 0 0 0; }

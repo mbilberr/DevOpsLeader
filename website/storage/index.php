@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Storage Management</title>
   <link rel="stylesheet" type="text/css" href="https://www.michaelbilberry.com/style/storage.css">
-  <script src="https://www.michaelbilberry.com/scripts/sorttable.js"></script>
+  <script src="https://www.michaelbilberry.com/script/sorttable.js"></script>
   <!--[if IE]><link rel="shortcut icon" href="image/icon/resume.ico"><![endif]-->
   <link rel="icon" href="../image/icon/resume.ico">
 </head>

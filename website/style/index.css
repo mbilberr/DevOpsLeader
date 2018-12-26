@@ -9,27 +9,47 @@ Contact: admin@michaelbilberry.com
 .title {
         font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
         font-size: 75px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 700;
-        line-height: 100%;
 } 
 
 header {
         padding: 1em;
-        color: white;
+        color: #696969;
         background-color: black;
-        clear: both;
         text-align: center;
+}
+
+body   {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(105,105,105,1));
+        margin: 0;
+
+}
+
+#navslim {
+    display: none;
+    border: 2px solid #290000;
+    position: fixed;
+    border-radius: 15px;
+    bottom: 0px;
+    left: 40%;
+    background-color: darkslategray;
+    color: #9E9E9E;
+    z-index: 2;
+    width: 200px;
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 2.5em;
+    /* transform: rotate(-90deg); */
+    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-weight: bold;
 }
 
 .deets {
         font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
         text-align: center;
-        margin-top:0em;
-        letter-spacing: 2.0px;
-        font-size: 0.8vw;
-        float:top;
+        margin-top:0px;
+    letter-spacing: 2.0px;
+    font-size: 2vw;
+    font-weight: bold;
 }
 
 h1 {
@@ -38,7 +58,6 @@ h1 {
 
 h2 {
         margin-top: 1.5em;
-        margin-bottom: 0.1em;
 }
 
 h3 {
@@ -47,12 +66,19 @@ h3 {
 }
 
 nav {
- 
+	z-index: 3;
+background-image: linear-gradient(to top, rgba(105,105,105,0), rgba(211,211,211,1));
+/*        background-color: lightgray;*/
         float: left;
+        position: sticky;
+        top: -1px;
         min-width: 200px;
         max-width: 300px;
         font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
+
+
+
 
 nav ul {
         list-style-type: none;
@@ -65,7 +91,6 @@ nav ul a {
 
 .container {
         width: 100%;
-        border: 1px solid gray;
 }
 
 article {
@@ -94,13 +119,12 @@ hr {
 .card {
         min-width: 100%;
         text-align: center;
-        border: 1px solid gray;
 }
 
 .cardicons img {
         padding-top: 50px;
-        height: 256px;
-        width: 256px;
+        width:30%;
+        height:auto;
         border:0;
 }
 
@@ -124,6 +148,7 @@ button {
 }
 
 .projects {
+	position:0;
         text-align:left;
         font-size:20px;
         margin:5%;
@@ -137,28 +162,48 @@ a {
 }
 
 cardbutton:hover, ahover:hover {
-        opacity: 0.7;
+        opacity: 0.3;
+}
+
+.guestbook {
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        background-color: silver;
+	width:100%;
+	height:auto;
+	border:0;
+	margin-top:5em;
+}
+
+.storage {
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        background-color:dimgray;
+	width:100%;
+	height:auto;
+	margin-top:1em;
+}
+
+.dashboard {
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        background-color: dimgray;
+	width:100%;
+	height:auto;
+	margin-top:1em;
 }
 
 .bottompic {
-        float: bottom;
         z-index: 0;
         bottom: 0px;
-        left: 0px;
-        right: 0px;
         width:100%;
 }
 
 footer {
-        position:absolute;
+        position: bottom;
         padding: 1em;
         margin-top:2500;
         margin-bottom:0;
         left:0;
-        right:0;
         background-color: black;
-        clear:both;
-        color: white;
+        color: dimgray;
         text-align: center;
 }
 
